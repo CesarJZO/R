@@ -1,6 +1,6 @@
-datos <- scan("/root/R/data.csv", sep=",")
+datos <- scan("./data.csv", sep=",")
 datos
 
-datatable = read.table("/root/R/datatable.csv", sep=",", header=TRUE)
+datatable = read.table("./datatable.csv", sep=",", header=TRUE)
 class(datatable)
 datatable

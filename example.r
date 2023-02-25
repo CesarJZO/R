@@ -1,5 +1,5 @@
 # Read a csv file containing integers
-array_data <- scan("/root/R/data.csv", sep=",")
+array_data <- scan("./data.csv", sep=",")
 
 # Print only even numbers
 for (i in array_data) {
