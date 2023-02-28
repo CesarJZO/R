@@ -1,9 +1,3 @@
-filePath <- "./data.csv"
-# Read values from a csv file
-vector_data <- scan(filePath, sep=",")
-
-
-
 # Merge sort algorithm
 merge_sort <- function(vector_data) {
     if (length(vector_data) <= 1)
@@ -20,3 +14,13 @@ merge_sort <- function(vector_data) {
         return(merge(left, right))
     }
 }
+
+filePath <- "./data.csv"
+# Read values from a csv file
+vector_data <- scan(filePath, sep=",")
+
+barplot(table(vector_data), main="Frequency table", xlab="Values", ylab="Frequency", col=cm.colors(14))
+
+merge_sort(vector_data)
+
+barplot(table(vector_data), main="Frequency table", xlab="Values", ylab="Frequency", col=cm.colors(14))
