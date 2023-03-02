@@ -9,8 +9,7 @@ colnames(movies_users)
 
 # count rows by itemid
 movies_users_count <- aggregate(movies_users$userid, by=list(movies_users$itemid), FUN=length)
-#colnames(movies_users_count) <- c("itemid", "count")
-#movies_users_count[1:100,]
+colnames(movies_users_count) <- c("itemid", "count")
 
 # get max count value
 max_count <- max(movies_users_count$count)
@@ -18,9 +17,8 @@ max_count <- max(movies_users_count$count)
 # get itemid with max count
 max_count_itemid <- movies_users_count[movies_users_count$count == max_count, "itemid"]
 
+# get movie title once
 movies_users[movies_users$itemid == max_count_itemid, "title"][1]
-
-
 
 # 2. ¿Cuántas películas vieron H y M?
 
