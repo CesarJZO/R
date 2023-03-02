@@ -27,18 +27,8 @@ users_item[1:10,]
 udata <- read.table("./sources/udata.data", header=TRUE)
 uuser <- read.table("./sources/u.user", header=TRUE, sep="|")
 
+# Merge udata and uuser where userid is equal
+movies_users <- merge(udata, uuser, by.x="userid", by.y="userid")
 
+# Get itemid count grouped by gender
 
-
-
-
-
-
-#count users per movie
-#movies_users <- movies_users %>% group_by(title) %>% summarise(users=n_distinct(userid))
-#colnames(movies_users)
-
-
-#ignore repeated movies
-movies_users <- movies_users %>% distinct(title)
-#movies_users
