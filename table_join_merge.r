@@ -13,7 +13,7 @@ users_data_item <- left_join(fullData, items, by=c("itemid"="itemid"))
 users_data_item[1:5,]
 colnames(users_data_item)
 
-# merged <- merge(fulData, users_data_item, by.x="itemid", by.y="itemid", all.x=TRUE, all.y=FALSE)
+merged <- merge(fulData, users_data_item, by.x="itemid", by.y="itemid", all.x=TRUE, all.y=FALSE)
 # colnames(merged)
 
 names(datos)[names(datos)=="timestamp"] <- "timeid"

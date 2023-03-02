@@ -1,0 +1,290 @@
+[
+    {
+        "page": 1,
+        "pages": 4,
+        "per_page": "10",
+        "total": 32
+    },
+    [
+        {
+            "id": "AUS",
+            "iso2Code": "AU",
+            "name": "Australia",
+            "region": {
+                "id": "EAS",
+                "iso2code": "Z4",
+                "value": "East Asia & Pacific"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Canberra",
+            "longitude": "149.129",
+            "latitude": "-35.282"
+        },
+        {
+            "id": "AUT",
+            "iso2Code": "AT",
+            "name": "Austria",
+            "region": {
+                "id": "ECS",
+                "iso2code": "Z7",
+                "value": "Europe & Central Asia"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Vienna",
+            "longitude": "16.3798",
+            "latitude": "48.2201"
+        },
+        {
+            "id": "BEL",
+            "iso2Code": "BE",
+            "name": "Belgium",
+            "region": {
+                "id": "ECS",
+                "iso2code": "Z7",
+                "value": "Europe & Central Asia"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Brussels",
+            "longitude": "4.36761",
+            "latitude": "50.8371"
+        },
+        {
+            "id": "CAN",
+            "iso2Code": "CA",
+            "name": "Canada",
+            "region": {
+                "id": "NAC",
+                "iso2code": "XU",
+                "value": "North America"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Ottawa",
+            "longitude": "-75.6919",
+            "latitude": "45.4215"
+        },
+        {
+            "id": "CHE",
+            "iso2Code": "CH",
+            "name": "Switzerland",
+            "region": {
+                "id": "ECS",
+                "iso2code": "Z7",
+                "value": "Europe & Central Asia"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Bern",
+            "longitude": "7.44821",
+            "latitude": "46.948"
+        },
+        {
+            "id": "CZE",
+            "iso2Code": "CZ",
+            "name": "Czechia",
+            "region": {
+                "id": "ECS",
+                "iso2code": "Z7",
+                "value": "Europe & Central Asia"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Prague",
+            "longitude": "14.4205",
+            "latitude": "50.0878"
+        },
+        {
+            "id": "DEU",
+            "iso2Code": "DE",
+            "name": "Germany",
+            "region": {
+                "id": "ECS",
+                "iso2code": "Z7",
+                "value": "Europe & Central Asia"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Berlin",
+            "longitude": "13.4115",
+            "latitude": "52.5235"
+        },
+        {
+            "id": "DNK",
+            "iso2Code": "DK",
+            "name": "Denmark",
+            "region": {
+                "id": "ECS",
+                "iso2code": "Z7",
+                "value": "Europe & Central Asia"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Copenhagen",
+            "longitude": "12.5681",
+            "latitude": "55.6763"
+        },
+        {
+            "id": "ESP",
+            "iso2Code": "ES",
+            "name": "Spain",
+            "region": {
+                "id": "ECS",
+                "iso2code": "Z7",
+                "value": "Europe & Central Asia"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Madrid",
+            "longitude": "-3.70327",
+            "latitude": "40.4167"
+        },
+        {
+            "id": "EST",
+            "iso2Code": "EE",
+            "name": "Estonia",
+            "region": {
+                "id": "ECS",
+                "iso2code": "Z7",
+                "value": "Europe & Central Asia"
+            },
+            "adminregion": {
+                "id": "",
+                "iso2code": "",
+                "value": ""
+            },
+            "incomeLevel": {
+                "id": "HIC",
+                "iso2code": "XD",
+                "value": "High income"
+            },
+            "lendingType": {
+                "id": "LNX",
+                "iso2code": "XX",
+                "value": "Not classified"
+            },
+            "capitalCity": "Tallinn",
+            "longitude": "24.7586",
+            "latitude": "59.4392"
+        }
+    ]
+]
