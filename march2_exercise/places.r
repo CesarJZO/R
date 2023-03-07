@@ -1,4 +1,34 @@
 # 3. ¿Dónde se ven las 10 películas más populares?
+# ¿Dónde se ven las 10 películas más populares?
+library(dplyr)
+# read in the data
+udata <- read.table("../sources/udata.data", header=TRUE)
+uitem <- read.table("../sources/u.item", header=TRUE, sep="|")
+uuser<-read.table("../sources/u.user",header=TRUE,sep="|")
+
+# merge the data
+movies_users <- merge(udata, uitem, by.x="itemid", by.y="itemid")
+data_user_item<-merge(movies_users, uitem, by.x="userid", by.y="userid")
+
+# count the number of users per movie
+movies_users_count <- aggregate(movies_users$userid, by=list(movies_users$itemid), FUN=length)
+colnames(movies_users_count) <- c("itemid", "count")
+movies_users_count[1:10,]
+
+# merge the data again
+users_item <- left_join(movies_users, movies_users_count, by=c("itemid"="itemid"))
+colnames(users_item)
+
+# count the number of users per movie
+users_item <- users_item %>% group_by(title) %>% summarise(users=n_distinct(userid))
+
+# sort the data
+movies_sorted <- users_item[order(-users_item$users),]
+
+# Join userid to movies_sorted
+# movies_sorted_user <- left_join(movies_sorted, uuser, by=c("userid"="userid"))
+# movies_sorted_user[1:10,]
+# colnames(movies_sorted_user)
 
 library(dplyr)
 
