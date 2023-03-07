@@ -1,36 +1,31 @@
-# ¿Dónde se ven las 10 películas más populares?
+# 3. ¿Dónde se ven las 10 películas más populares?
 
 library(dplyr)
 
-# read in the data
+uuser <- read.table("../sources/u.user", header=TRUE, sep="|")
 udata <- read.table("../sources/udata.data", header=TRUE)
 uitem <- read.table("../sources/u.item", header=TRUE, sep="|")
 
-# merge the data
-movies_users <- merge(udata, uitem, by.x="itemid", by.y="itemid")
+data_user <- merge(udata, uuser, by.x="userid", by.y="userid")
+colnames(data_user)
 
-# count the number of users per movie
-movies_users_count <- aggregate(movies_users$userid, by=list(movies_users$itemid), FUN=length)
-colnames(movies_users_count) <- c("itemid", "count")
+data_user <- merge(data_user, uitem, by.x="itemid", by.y="itemid")
+colnames(data_user)
 
-# merge the data again
-users_item <- left_join(movies_users, movies_users_count, by=c("itemid"="itemid"))
+data_user <- subset(data_user, select = c(itemid, title, userid, rate, timestamp, gender, occupation, zcode))
 
-# count the number of users per movie
-users_item <- users_item %>% group_by(title) %>% summarise(users=n_distinct(userid))
+# get count of column itemid non repeated values
+movies_count <- aggregate(data_user$userid, by=list(data_user$itemid), FUN=length)
+colnames(movies_count) <- c("itemid", "count")
 
-# sort the data
-users_item <- users_item[order(-users_item$users),]
+movies_data <- merge(movies_count, data_user, by.x="itemid", by.y="itemid")
+colnames(movies_data)
 
-# get the top 10
-users_item[1:10,]
+movies_data_title <- movies_data %>% group_by(title)
+colnames(movies_data_title)
 
-uuser <- read.table("../sources/u.user", header=TRUE, sep="|")
+movies_top <- movies_data_title[order(-movies_data$count), ]
 
-# get the first character from the zcode column from uuser
-uuser$zcode <- substr(uuser$zcode, 1, 1)
-first_zcode <- uuser$zcode
-colnames(users_item)
-# append first_zcode to users_item
-# users_item$zcode <- first_zcode
-
+zcode_data <- subset(movies_top, select = c(itemid, title, userid, zcode, count))
+top_code <- subset(zcode_data, select = c(title, zcode))
+top_code
