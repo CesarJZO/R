@@ -26,4 +26,4 @@ cat("\n", male, "movies were watched by men", "\n\n", female, "movies were watch
 
 counts <- movies_count$count
 
-barplot(counts, names.arg = movies_count$gender, main="Movies by gender", xlab="Count", ylab="Gender", col=cm.colors(14))
+barplot(counts, names.arg = movies_count$gender, main="Movies by gender", xlab="Gender", ylab="Count", col=cm.colors(14))
