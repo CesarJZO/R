@@ -24,6 +24,12 @@ movies_count_f <- movies_count[movies_count$gender == "F",]
 female <- nrow(movies_count_f)
 cat("\n", male, "movies were watched by men", "\n\n", female, "movies were watched by women", "\n")
 
-counts <- movies_count$count
+movies_count[1:10,]
+movies_count_f[1:10,]
 
-barplot(counts, names.arg = movies_count$gender, main="Movies by gender", xlab="Gender", ylab="Count", col=cm.colors(14))
+
+movies_by_gender
+
+# counts <- movies_count$count
+
+# barplot(counts, names.arg = movies_count$gender, main="Movies by gender", xlab="Gender", ylab="Count", col=cm.colors(14))

@@ -4,6 +4,7 @@
 - `lubridate`
 - `dplyr`
 - `readr`
+- `ggplot2`
 
 ## Install packages
 
