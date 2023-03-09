@@ -1,25 +1,23 @@
-# Create a data frame with height and weight data
-data <- data.frame(
-  height = c(5.2, 5.4, 5.5, 5.9, 6.1, 6.3),
-  weight = c(125, 130, 135, 155, 165, 175)
-)
-
-# Add a column to indicate gender (arbitrarily assigned)
-data$gender <- c("F", "F", "F", "M", "M", "M")
-
-# Print the data frame
-print(data)
-
-# Define the new person's height and weight
-new_data <- data.frame(
-  height = 5.7,
-  weight = 150
-)
-
-# Use the knn() function to predict the gender of the new person based on the data
 library(class)
-predicted_gender <- knn(data[,1:2], new_data, data$gender, k=3)
 
-# Print the predicted gender
-print(predicted_gender)
+# Data frame with height and weight
+data <- data.frame(
+  height = c(1.8, 1.63, 1.78, 1.91, 1.59, 2.01), # In meters
+  weight = c(80.2, 55.3, 68.4, 90.1, 45.2, 100.2) # In kilograms
+)
+
+# Adding a column to indicate gender
+data$gender <- c("F", "F", "M", "M", "F", "M")
+data
+
+# Person's height and weight
+new_data <- data.frame(
+  height = 1.75,
+  weight = 60
+)
+
+# Predict the gender of the new person based on new_data
+predicted_gender <- knn(data[,1:2], new_data, data$gender, k=3)
+predicted_gender
+
 
