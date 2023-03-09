@@ -1,15 +1,25 @@
+# Create a data frame with height and weight data
+data <- data.frame(
+  height = c(5.2, 5.4, 5.5, 5.9, 6.1, 6.3),
+  weight = c(125, 130, 135, 155, 165, 175)
+)
+
+# Add a column to indicate gender (arbitrarily assigned)
+data$gender <- c("F", "F", "F", "M", "M", "M")
+
+# Print the data frame
+print(data)
+
+# Define the new person's height and weight
+new_data <- data.frame(
+  height = 5.7,
+  weight = 150
+)
+
+# Use the knn() function to predict the gender of the new person based on the data
 library(class)
+predicted_gender <- knn(data[,1:2], new_data, data$gender, k=3)
 
-# Load the iris data set
-data(iris)
-iris
-# Split the data set into training and test sets
-train <- iris[1:100, ]
-test <- iris[101:150, ]
+# Print the predicted gender
+print(predicted_gender)
 
-# Use KNN to predict the species of the test set
-pred <- knn(train[, 1:4], test[, 1:4], train[, 5], k = 3)
-pred
-# Calculate the accuracy of the KNN predictions
-accuracy <- sum(pred == test[, 5])/nrow(test)
-accuracy
