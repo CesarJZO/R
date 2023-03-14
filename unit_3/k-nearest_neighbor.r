@@ -1,4 +1,5 @@
 library(class)
+library(cccd)
 
 # Data frame with height and weight
 data <- data.frame(
@@ -16,8 +17,9 @@ new_data <- data.frame(
   weight = 60
 )
 
+graph <- nng(data, k=3)
+plot(graph, data, main="KNN", xlab="Height", ylab="Weight")
+
 # Predict the gender of the new person based on new_data
-predicted_gender <- knn(data[,1:2], new_data, data$gender, k=3)
+predicted_gender <- class.knn(data[,1:2], new_data, data$gender, k=3)
 predicted_gender
-
-
