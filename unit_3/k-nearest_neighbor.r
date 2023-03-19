@@ -16,13 +16,21 @@ new_person <- data.frame(
 )
 
 # Predict the gender of the new person
-predicted_gender <- knn(data[,1:2], new_person, data$gender, k=3)
+predicted_gender <- knn(data[, 1:2], new_person, data$gender, k = 3)
 
-plot(data$height, data$weight, col = ifelse(data$gender == "M", "blue", "red"), main="K-Vecinos", xlab="Height (m)", ylab="Weight (kg)")
-points(new_person$height, new_person$weight, col = ifelse(predicted_gender == "M", "blue", "red"), pch = 19)
+plot(
+  data$height, data$weight,
+  col = ifelse(data$gender == "M", "blue", "red"),
+  main = "K-Vecinos", xlab = "Height (m)", ylab = "Weight (kg)"
+)
+points(
+  new_person$height, new_person$weight,
+  col = ifelse(predicted_gender == "M", "blue", "red"),
+  pch = 19
+)
 
 # Format the legend based on the predicted gender
-if(predicted_gender == "M"){
+if (predicted_gender == "M") {
   legend_text <- c("Female", "Male", "Predicted (M)")
   legend_col <- c("red", "blue", "blue")
 } else {
