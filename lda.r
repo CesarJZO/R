@@ -28,5 +28,6 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
     ylab("Sepal Width") +
     theme_bw()
 
-class(iris)
+class(iris$Species)
 colnames(iris)
+levels(iris$Species)
