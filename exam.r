@@ -2,8 +2,6 @@
 
 # Output: Movie genre prediction and sector
 
-library(MASS)
-
 # Columns: userid, itemid, rate, timestamp
 udata <- read.table("./sources/udata.data", header = TRUE)
 
@@ -18,9 +16,19 @@ uitem <- read.table("./sources/u.item", header = TRUE, sep = "|")
 udata_uitem <- merge(udata, uitem, by = "itemid")
 
 df <- merge(udata_uitem, uuser, by = "userid")
-head(df)
-lda.model <- lda(gender ~ ., data = df)
 
-df$gender <- factor(df$gender)
-class(df$gender)
-levels(df$gender)
+library(dplyr)
+library(tidyr)
+
+movies_summary <- df %>%
+    select(rate, age, Action:Western) %>%
+    pivot_longer(
+        cols = Action:Western, names_to = "genre", values_to = "genre_value"
+    ) %>%
+    filter(genre_value == 1) %>%
+    select(-genre_value) %>%
+    group_by(rate, age, genre) %>%
+    summarize(count = n())
+
+# to view the summary table
+movies_summary
