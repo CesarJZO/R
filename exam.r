@@ -15,6 +15,7 @@ uitem <- read.table("./sources/u.item", header = TRUE, sep = "|")
 
 udata_uitem <- merge(udata, uitem, by = "itemid")
 
+# All columns
 df <- merge(udata_uitem, uuser, by = "userid")
 
 library(dplyr)
@@ -41,7 +42,6 @@ ggplot(movies_summary, aes(x = genre, y = rate, fill = genre)) +
         title = "Boxplot of rate by genre"
     )
 
-# Plot rate by age using points
 ggplot(movies_summary, aes(x = age, y = rate, fill = genre)) +
     geom_boxplot() +
     labs(
@@ -52,11 +52,26 @@ ggplot(movies_summary, aes(x = age, y = rate, fill = genre)) +
 
 library(MASS)
 
-lda_model <- lda(rate ~ age + genre, data = movies_summary)
-summary(lda_model)
-
-new_data <- data.frame(
-    age = 38, genre = "Comedy"
+age_model <- lda(age ~ genre + rate, data = movies_summary)
+age <- data.frame(
+    rate = 5,
+    genre = "Drama"
 )
-predicted_class <- predict(lda_model, newdata = new_data)$class
-predicted_class
+prediction <- predict(age_model, newdata = age)$class
+prediction
+
+rate_model <- lda(rate ~ age + genre, data = movies_summary)
+rate_data <- data.frame(
+    age = 27,
+    genre = "Drama"
+)
+prediction <- predict(rate_model, newdata = rate_data)$class
+prediction
+
+genre_model <- lda(genre ~ age + rate, data = movies_summary)
+genre <- data.frame(
+    age = 27,
+    rate = 5
+)
+prediction <- predict(genre_model, newdata = genre)$class
+prediction
