@@ -1,0 +1,10 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/hadoop-sdkman:2": {},
+    "ghcr.io/rocker-org/devcontainer-features/r-apt:0": {
+      "vscodeRSupport": "lsp"
+    },
+      "ghcr.io/devcontainers-contrib/features/mysql-homebrew:1": {}
+  }
+}
