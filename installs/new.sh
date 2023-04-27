@@ -8,4 +8,6 @@ hdfs dfs -ls /u03
 sqoop import --connect jdbc:mysql://localhost:3306/itsp --username root --password 2805 --table alumnos --target-dir /u03/my_sql_data
 
 # Export
-sqoop export --connect jdbc:mysql://localhost:3306/itsp --username root --password 2805 --table alumnos --target-dir /u03/my_sql_data
+sqoop export --connect jdbc:mysql://localhost:3306/itsp --username root --password 2805 --table alumnos --export-dir /u03/my_sql_data
+
+
