@@ -5,6 +5,10 @@
 - `dplyr`
 - `readr`
 - `ggplot2`
+- `tm`
+- `wordcloud`
+- `RColorBrewer`
+- `NLP`
 
 ## Install packages
 
