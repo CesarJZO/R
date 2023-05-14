@@ -35,9 +35,11 @@ mycorpus <- tm_map(mycorpus, stripWhitespace)
 my_stop_words <- c("the")
 mycorpus <- tm_map(mycorpus, removeWords, my_stop_words)
 
-wordcloud(
+grahic <- wordcloud(
     movies,
     random.order = FALSE,
     random.color = FALSE,
     colors = brewer.pal(8, "Dark2"),
 )
+
+png(file = "./wordcloud.png", width = 800, height = 600)
