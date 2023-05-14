@@ -2,15 +2,15 @@ library(NLP)
 library(tm)
 library(RColorBrewer)
 library(wordcloud)
-
 library(rhdfs)
+
+# Connect to HDFS
 hdfs.init()
 
 # Content of wordcount file containing data
 # from txt, json, mysql and twitter
 movies <- hdfs.cat("/u03/wordcount_final_out/part-r-00000")
 head(movies)
-class(movies)
 
 # Corpus vector to be graphed
 mycorpus <- VCorpus(VectorSource(movies))
@@ -29,7 +29,6 @@ mycorpus <- tm_map(mycorpus, content_transformer(remove_url))
 mycorpus <- tm_map(mycorpus, removePunctuation)
 mycorpus <- tm_map(mycorpus, content_transformer(tolower))
 mycorpus <- tm_map(mycorpus, stripWhitespace)
-# mycorpus <- tm_map(mycorpus, stemDocument)
 
 # Remove specific words
 my_stop_words <- c("the")
