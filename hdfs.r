@@ -8,3 +8,7 @@ library(rhdfs)
 hdfs.init()
 
 hdfs.ls("/u03/")
+path <- "/u03/manhattan_project.txt"
+
+manhattan <- hdfs.cat(path)
+manhattan
