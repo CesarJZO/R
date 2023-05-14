@@ -3,11 +3,11 @@ library(tm)
 library(RColorBrewer)
 library(wordcloud)
 
-# Lab 5.1
-movies <- system(
-    "hdfs dfs -cat /u03/mysql/part-m-00000",
-    intern = TRUE
-)
+library(rhdfs)
+hdfs.init()
+
+# Vector of movies containing title only
+movies <- hdfs.read.text("/u03/movies.txt")
 
 # Corpus vector to be graphed
 mycorpus <- VCorpus(VectorSource(movies))
