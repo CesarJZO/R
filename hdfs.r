@@ -1,8 +1,7 @@
-# Set env if it is not set in your .bashrc
-# Use library(rhdfs) directly otherwise.
-library(rJava)
+Sys.setenv(JAVA_HOME = "/usr/local/java")
 Sys.setenv(HADOOP_CMD = "/usr/local/hadoop/bin/hadoop")
 
+library(rJava)
 library(rhdfs)
 
 hdfs.init()

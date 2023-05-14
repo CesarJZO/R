@@ -9,7 +9,7 @@ hdfs.init()
 
 # Content of wordcount file containing data
 # from txt, json, mysql and twitter
-movies <- hdfs.cat("/u03/wordcount_final_out/part-r-00000")
+movies <- hdfs.cat("/u03/final_wordcount/part-r-00000")
 head(movies)
 
 # Corpus vector to be graphed

@@ -5,3 +5,5 @@ use null_data;
 create table Movies (
     title varchar(255)
 );
+
+delete from Movies;
