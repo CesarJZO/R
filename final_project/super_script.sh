@@ -26,5 +26,8 @@ ln -s ln -s /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2
 # Run mapreduce wordcount
 yarn jar mapreduce-examples wordcount /u03/mysql/part-m-00000 /u03/final/titles.txt /u03/final/titles.json /u03/wordcount_final_out
 
+# Print file content to verify
+hdfs dfs -cat /u03/wordcount_final_out/part-r-00000
+
 # Run wordcloud script
 R -f ./wordcloud.r
