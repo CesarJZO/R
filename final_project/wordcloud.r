@@ -6,8 +6,11 @@ library(wordcloud)
 library(rhdfs)
 hdfs.init()
 
-# Vector of movies containing title only
-movies <- hdfs.read.text("/u03/movies.txt")
+# Content of wordcount file containing data
+# from txt, json, mysql and twitter
+movies <- hdfs.cat("/u03/wordcount_final_out/part-r-00000")
+head(movies)
+class(movies)
 
 # Corpus vector to be graphed
 mycorpus <- VCorpus(VectorSource(movies))

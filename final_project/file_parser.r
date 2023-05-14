@@ -20,7 +20,5 @@ write.table(
 )
 
 # Export titles to json file where each row is part of an array called titles
-
 titles_json <- toJSON(titles)
-
 write(titles_json, "../sources/titles.json")

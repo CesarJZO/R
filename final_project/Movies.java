@@ -1,8 +1,8 @@
-// ORM class for table 'movies'
+// ORM class for table 'Movies'
 // WARNING: This class is AUTO-GENERATED. Modify at your own risk.
 //
 // Debug information:
-// Generated date: Sat May 20 14:43:15 EDT 2023
+// Generated date: Sun May 14 11:03:14 EDT 2023
 // For connector: org.apache.sqoop.manager.MySQLManager
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;
@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-public class movies extends SqoopRecord  implements DBWritable, Writable {
+public class Movies extends SqoopRecord  implements DBWritable, Writable {
   private final int PROTOCOL_VERSION = 3;
   public int getClassFormatVersion() { return PROTOCOL_VERSION; }
   public static interface FieldSetterCommand {    void setField(Object value);  }  protected ResultSet __cur_result_set;
@@ -43,11 +43,11 @@ public class movies extends SqoopRecord  implements DBWritable, Writable {
     setters.put("title", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        movies.this.title = (String)value;
+        Movies.this.title = (String)value;
       }
     });
   }
-  public movies() {
+  public Movies() {
     init0();
   }
   private String title;
@@ -57,7 +57,7 @@ public class movies extends SqoopRecord  implements DBWritable, Writable {
   public void set_title(String title) {
     this.title = title;
   }
-  public movies with_title(String title) {
+  public Movies with_title(String title) {
     this.title = title;
     return this;
   }
@@ -65,10 +65,10 @@ public class movies extends SqoopRecord  implements DBWritable, Writable {
     if (this == o) {
       return true;
     }
-    if (!(o instanceof movies)) {
+    if (!(o instanceof Movies)) {
       return false;
     }
-    movies that = (movies) o;
+    Movies that = (Movies) o;
     boolean equal = true;
     equal = equal && (this.title == null ? that.title == null : this.title.equals(that.title));
     return equal;
@@ -77,10 +77,10 @@ public class movies extends SqoopRecord  implements DBWritable, Writable {
     if (this == o) {
       return true;
     }
-    if (!(o instanceof movies)) {
+    if (!(o instanceof Movies)) {
       return false;
     }
-    movies that = (movies) o;
+    Movies that = (Movies) o;
     boolean equal = true;
     equal = equal && (this.title == null ? that.title == null : this.title.equals(that.title));
     return equal;
@@ -236,11 +236,11 @@ this.readFields0(__dataIn);  }
     } catch (RuntimeException e) {    throw new RuntimeException("Can't parse input data: '" + __cur_str + "'", e);    }  }
 
   public Object clone() throws CloneNotSupportedException {
-    movies o = (movies) super.clone();
+    Movies o = (Movies) super.clone();
     return o;
   }
 
-  public void clone0(movies o) throws CloneNotSupportedException {
+  public void clone0(Movies o) throws CloneNotSupportedException {
   }
 
   public Map<String, Object> getFieldMap() {

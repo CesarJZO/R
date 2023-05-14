@@ -2,6 +2,6 @@ create database null_data;
 
 use null_data;
 
-create table movies (
+create table Movies (
     title varchar(255)
 );
