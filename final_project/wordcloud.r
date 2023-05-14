@@ -36,7 +36,7 @@ my_stop_words <- c("the")
 mycorpus <- tm_map(mycorpus, removeWords, my_stop_words)
 
 wordcloud(
-    mycorpus,
+    movies,
     random.order = FALSE,
     random.color = FALSE,
     colors = brewer.pal(8, "Dark2"),
