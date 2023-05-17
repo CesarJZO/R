@@ -9,4 +9,9 @@ head(data)
 items <- data$itemid
 head(items)
 
-wordcloud(items, random.order=FALSE, random.color=FALSE, colors=brewer.pal(8, "Dark2"))
+wordcloud(
+    items,
+    random.order = FALSE,
+    random.color = FALSE,
+    colors = brewer.pal(8, "Dark2")
+)
