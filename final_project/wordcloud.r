@@ -2,10 +2,12 @@ library(NLP)
 library(tm)
 library(RColorBrewer)
 library(wordcloud)
-library(rhdfs)
 
 # Lab 5.1
-movies <- readLines("../sources/titles.txt")
+movies <- system(
+    "hdfs dfs -cat /u03/mysql/part-m-00000",
+    intern = TRUE
+)
 
 # Corpus vector to be graphed
 mycorpus <- VCorpus(VectorSource(movies))
@@ -14,8 +16,8 @@ mycorpus <- VCorpus(VectorSource(movies))
 mycorpus <- tm_map(mycorpus, removeWords, stopwords("english"))
 
 # Remove punctuation manually
-remove_NumPunct <- function(x) gsub("[^[:alpha:][:space:]]*", "", x)
-mycorpus <- tm_map(mycorpus, content_transformer(remove_NumPunct))
+remove_numpunct <- function(x) gsub("[^[:alpha:][:space:]]*", "", x)
+mycorpus <- tm_map(mycorpus, content_transformer(remove_numpunct))
 
 remove_url <- function(x) gsub("http[^[:space:]]*", "", x)
 mycorpus <- tm_map(mycorpus, content_transformer(remove_url))
@@ -27,8 +29,8 @@ mycorpus <- tm_map(mycorpus, stripWhitespace)
 # mycorpus <- tm_map(mycorpus, stemDocument)
 
 # Remove specific words
-myStopWords <- c("the")
-mycorpus <- tm_map(mycorpus, removeWords, myStopWords)
+my_stop_words <- c("the")
+mycorpus <- tm_map(mycorpus, removeWords, my_stop_words)
 
 wordcloud(
     mycorpus,
