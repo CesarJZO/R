@@ -32,7 +32,7 @@ mycorpus <- tm_map(mycorpus, stripWhitespace)
 # mycorpus <- tm_map(mycorpus, stemDocument)
 
 # Remove specific words
-my_stop_words <- c("the")
+my_stop_words <- c("the", "ref", "its")
 mycorpus <- tm_map(mycorpus, removeWords, my_stop_words)
 
 wordcloud(
