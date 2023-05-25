@@ -8,7 +8,7 @@ install.packages("tm")
 install.packages("RColorBrewer")
 install.packages("wordcloud")
 
-# Set environment variables
+# Set environment variables just in case
 Sys.setenv(HADOOP_CMD = "/usr/local/hadoop/bin/hadoop")
 Sys.setenv(JAVA_HOME = "/usr/local/java")
 
