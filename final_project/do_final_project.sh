@@ -23,3 +23,5 @@ yarn jar mapreduce-examples wordcount /u03/final/* /u03/mysql/part-m-00000 /u03/
 
 # Run wordcloud script
 R -f ./wordcloud.r
+
+flume-ng agent --conf conf --conf-file $FLUME_CONF_DIR/flume_twitter.conf --name TwitterAgent -Dflume.root.logger=DEBUG.console
