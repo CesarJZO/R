@@ -1,12 +1,12 @@
+# Set CRAN repository to ITAM's mirror
+options(repos = c(CRAN = "https://cran.itam.mx"))
+
 install.packages("dplyr")
 install.packages("rjson")
 install.packages("NLP")
 install.packages("tm")
 install.packages("RColorBrewer")
 install.packages("wordcloud")
-
-# Set your work directory where hdfs file is located
-setwd("/home/usr7am229/R/final_project")
 
 # Set environment variables
 Sys.setenv(HADOOP_CMD = "/usr/local/hadoop/bin/hadoop")

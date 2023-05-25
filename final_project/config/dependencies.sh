@@ -8,4 +8,4 @@ wget https://raw.githubusercontent.com/RevolutionAnalytics/rhdfs/master/build/rh
 # Install rJava
 R CMD javareconf
 
-R
+R -f ./dependencies.r
